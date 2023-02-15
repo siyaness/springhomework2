@@ -17,8 +17,8 @@ public class Post extends Timestamped{
     @Column(nullable = false)
     private String title;
 
-//    @Column(nullable = false)
-//    private String author;
+    @Column(nullable = false)
+    private String username;
 
     @Column(nullable = false)
     private String contents;
@@ -28,16 +28,16 @@ public class Post extends Timestamped{
 //    private String password;
 
 
-    public Post(String title, String author, String contents, String password){
+    public Post(String title, String contents){
         this.title = title;
 //        this.author = author;
         this.contents = contents;
 //        this.password = password;
     }
 
-    public Post(PostRequestDto requestDto, Long id){
+    public Post(PostRequestDto requestDto, String username){
         this.title = requestDto.getTitle();
-//        this.author = requestDto.getAuthor();
+        this.username = username;
         this.contents = requestDto.getContents();
 //        this.password = requestDto.getPassword();
     }
@@ -48,4 +48,5 @@ public class Post extends Timestamped{
         this.contents = requestDto.getContents();
 //        this.password = requestDto.getPassword();
     }
+
 }

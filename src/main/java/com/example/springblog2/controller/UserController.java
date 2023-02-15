@@ -47,6 +47,6 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody LoginRequestDto loginRequestDto, HttpServletResponse response) {
         userService.login(loginRequestDto, response);
-        return new ResponseEntity<>("로그인 성공", HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>("로그인 성공", HttpStatus.OK);
     }
 }

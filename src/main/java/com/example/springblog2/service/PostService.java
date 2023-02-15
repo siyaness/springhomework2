@@ -45,7 +45,7 @@ public class PostService {
             );
 
             // 요청받은 DTO로 DB에 저장할 객체 만들기
-            Post post = postRepository.saveAndFlush(new Post(requestDto, user.getId()));
+            Post post = postRepository.saveAndFlush(new Post(requestDto, user.getUsername()));
 
             return new PostResponseDto(post);
         }else{
